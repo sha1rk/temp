@@ -1,0 +1,23 @@
+<?php
+$agent=$_SERVER["HTTP_USER_AGENT"];
+$ip1=$_SERVER["HTTP_CLIENT_IP"];
+$ip2=$_SERVER["HTTP_X_FORWARDED_FOR"];
+$ip3=$_SERVER["HTTP_X_FORWADED"];
+$ip4=$_SERVER["HTTP_FORWARDED_FOR"];
+$ip5=$_SERVER["HTTP_FORWARDED"];
+$ip6=$_SERVER["REMOTE_ADDR"];
+
+
+$myfile=fopen("/var/www/html/23D5R4TF54FT424D23log/23D5R4TF54FT424D23log.txt","a");
+fwrite($myfile,"\n");
+fwrite($myfile,"HTTP_USER_AGENT = ".$agent."\n");
+fwrite($myfile,"HTTP_CLINET_IP = ".$ip1."\n");
+fwrite($myfile,"HTTP_X_FORWARDED_FOR = ".$ip2."\n");
+fwrite($myfile,"HTTP_X_FORWARDED = ".$ip3."\n");
+fwrite($myfile,"HTTP_FORWARDED_FOR = ".$ip4."\n");
+fwrite($myfile,"HTTP_FORWARDED = ".$ip5."\n");
+fwrite($myfile,"REMOTE_ADDR = ".$ip6."\n");
+fwrite($myfile,"\n----------------\n");
+fclose($myfile);
+
+?>
